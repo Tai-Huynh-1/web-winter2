@@ -2,6 +2,23 @@
 <html>
 	<head>
 		<title>My Page Title</title>
+		<style>
+			/* This is where we write CSS (cascading stylesheet) - notice, my comment notation is different */
+
+			table {
+				border-collapse: collapse;
+				/* 500px is a static unit (unchanged) */
+				/* width: 250px; */
+				/* 50% is a relative unit */
+				width: 50%;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				/* color: red; */
+			}
+		</style>
 	</head>
 
 	<body>
@@ -15,11 +32,50 @@
 			<h5>This is heading 5</h5>
 			<h6>This is heading 6</h6>
 
-			<h6>This is heading 6</h6>
-			<h6>This is heading 6</h6>
+			<!-- Adding style "attribute" to my paragraph tag -->
+			<p style="color: red">This is a paragraph</p>
+			<!-- <b> is just a styling tag (bold) & slightly different semantic meaning, <strong> provides both styling & semantic meaning of high importance -->
+			<p>
+				<strong>This is a strong paragraph</strong>
+				This part of the paragraph is not strong.
+			</p>
 
-			<h1>Testing Git Terminal</h1>
-			<h2>Testing Github desktop</h2>
+			<p>
+				<em>This is a emphasized paragraph</em>
+				This part of the paragraph is emphasized.
+			</p>
+
+			<!-- <a> tags are anchor tags -->
+			<a href="https://www.google.com" target="_blank" style="color: blue">Google</a>
+
+			<!-- <img src="" alt="logo" width="" height="" /> -->
+
+			<table>
+				<thead>
+					<tr>
+						<th>Company</th>
+						<th>Contact</th>
+						<th>Country</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Albertson</td>
+						<td>Alfred</td>
+						<td>USA</td>
+					</tr>
+					<tr>
+						<td>Amazon</td>
+						<td>Anne</td>
+						<td>USA</td>
+					</tr>
+					<tr>
+						<td>Target</td>
+						<td>Lucy</td>
+						<td>USA</td>
+					</tr>
+				</tbody>
+			</table>
 		</main>
 	</body>
 </html>
