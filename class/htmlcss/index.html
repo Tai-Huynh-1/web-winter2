@@ -4,7 +4,53 @@
 		<title>My Page Title</title>
 		<style>
 			/* This is where we write CSS (cascading stylesheet) - notice, my comment notation is different */
+			/* CSS selector priority: (last) class < id < style attribute < !important - 2 or more !important flag will neutralize and return it back to the original selector priority */
 
+			/* "*" is the "select-all" selector - all styling defined here will apply to all elements */
+			/* * {
+				font-size: 32px;
+			} */
+
+			/* # id selector (id is unique) */
+			#first-h1 {
+				color: blue;
+			}
+
+			#text-orange {
+				color: orange !important;
+			}
+
+			/* . class selector (apply the same styling to a group of elements of the same class name) */
+			/* between multiple class names, the last class will override any previous (class) style */
+			.text-red {
+				color: red;
+			}
+
+			.text-green {
+				color: green !important;
+			}
+
+			/* element.class selector */
+			p.pink-text {
+				color: pink;
+			}
+
+			/* descendent selector "space" (all p tags that exist in a div) */
+			ul p {
+				color: green;
+			}
+
+			/* (immediate) children selector ">" */
+			ul > p {
+				color: brown;
+			}
+
+			/* adjacent selector "+" (the h2 that comes right after an h1) */
+			h1 + h2 {
+				color: yellow;
+			}
+
+			/* HTML tag selector */
 			table {
 				border-collapse: collapse;
 				/* 500px is a static unit (unchanged) */
@@ -25,17 +71,21 @@
 		<main>
 			<!-- This is the comment notation for HTML (ctrl + /) -->
 			<!-- using proper html tags will provide semantic meaning (semantic html) - this will help screen readers & disabled audiences when using your site -->
+			<h1 id="first-h1">This is heading 1</h1>
 			<h1>This is heading 1</h1>
+			<h2>This is heading 2 that comes after an H1</h2>
 			<h2>This is heading 2</h2>
+			<h3 class="text-red">This is red heading 3</h3>
+			<h3 class="text-green text-red">This is red heading 3</h3>
 			<h3>This is heading 3</h3>
-			<h4>This is heading 4</h4>
+			<h4 class="pink-text">This is heading 4</h4>
 			<h5>This is heading 5</h5>
-			<h6>This is heading 6</h6>
+			<h6 class="text-green" id="text-orange" style="color: cornflowerblue !important">This is heading 6</h6>
 
 			<!-- Adding style "attribute" to my paragraph tag -->
 			<p style="color: red">This is a paragraph</p>
 			<!-- <b> is just a styling tag (bold) & slightly different semantic meaning, <strong> provides both styling & semantic meaning of high importance -->
-			<p>
+			<p class="pink-text">
 				<strong>This is a strong paragraph</strong>
 				This part of the paragraph is not strong.
 			</p>
@@ -49,6 +99,19 @@
 			<a href="https://www.google.com" target="_blank" style="color: blue">Google</a>
 
 			<!-- <img src="" alt="logo" width="" height="" /> -->
+
+			<div>
+				<h2>H2 in Div</h2>
+				<ul>
+					<p>Paragraph as immediate child of UL will be brown</p>
+					<div>
+						<p>Paragraph 1 in UL</p>
+						<p>Paragraph 2 in UL</p>
+						<p>Paragraph 3 in UL</p>
+					</div>
+				</ul>
+				<p>Paragraph outside of UL</p>
+			</div>
 
 			<table>
 				<thead>
