@@ -1,0 +1,77 @@
+/* This is where we write CSS (cascading stylesheet) - notice, my comment notation is different */
+/* CSS selector priority: (last) class < id < style attribute < !important - 2 or more !important flag will neutralize and return it back to the original selector priority */
+
+/* "*" is the "select-all" selector - all styling defined here will apply to all elements */
+/* * {
+				font-size: 32px;
+			} */
+
+/* # id selector (id is unique) */
+#first-h1 {
+	color: blue;
+}
+
+#text-orange {
+	color: orange !important;
+}
+
+/* . class selector (apply the same styling to a group of elements of the same class name) */
+/* between multiple class names, the last class will override any previous (class) style */
+.text-red {
+	color: red;
+}
+
+.text-green {
+	color: green;
+}
+
+/* element.class selector */
+p.pink-text {
+	color: pink;
+}
+
+/* descendent selector "space" (all p tags that exist in a div) */
+ul p {
+	color: green;
+}
+
+/* (immediate) children selector ">" */
+ul > p {
+	color: brown;
+}
+
+/* adjacent selector "+" (the h2 that comes right after an h1) */
+h1 + h2 {
+	color: red;
+}
+
+/* HTML tag selector */
+table {
+	border-collapse: collapse;
+	/* 500px is a static unit (unchanged) */
+	/* width: 250px; */
+	/* 50% is a relative unit */
+	width: 50%;
+}
+
+th,
+td {
+	border: 1px solid black;
+	/* color: red; */
+}
+
+ul {
+	list-style: none;
+}
+
+ol {
+	list-style: upper-roman;
+}
+
+.box1 {
+	/* width: 50px; */
+	/* height: 50px; */
+	padding: 20px;
+	border: 10px solid black;
+	margin-bottom: 15px;
+}
