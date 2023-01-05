@@ -91,3 +91,41 @@ console.log("done");
 // [index.js + line 74 console.log] >
 // [index.js] >
 // []
+
+// review
+console.log(cat); // const => reference error: cat must be initialized before accessing
+const cat = "Tom";
+
+// var fish; // top of your code, it doesn't assign the value you intend to give it.
+console.log(fish); // var => undefined
+var fish = "goldfish";
+
+console.log(car); // let => reference error: car must be initialized before accessing
+let car = "subaru";
+
+console.log(divide(10, 2)); // functions declared with function keyword & not stored in variable => hoisted & works just fine as expected
+function divide(a, b) {
+	return a / b;
+}
+
+power(2, 8); // const => reference error: power must be initialized before accessing
+const power = (a, b) => {
+	return a ** b;
+};
+
+// var sub;
+sub(10, 5); // anonymous arrow function stored in var => get hoisted, but takes on undefined, & undefined is not a function therefore we see Type Error
+var sub = (a, b) => {
+	return a - b;
+};
+
+var add3;
+add3(5, 4, 3); // anonymous function stored in var => get hoisted, but takes on undefined, & undefined is not a function therefore we see Type Error
+var add3 = function (a, b, c) {
+	return a + b + c;
+};
+
+add4(1, 2, 3, 4);
+let add4 = function (a, b, c, d) {
+	return a + b + c + d;
+};
