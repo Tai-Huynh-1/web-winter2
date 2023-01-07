@@ -92,7 +92,7 @@ console.log("done");
 // [index.js] >
 // []
 
-// review
+// review: hoisting is the behavior or effect where variables declared with var or functions declared with function keyword can be accessed before their declaration.
 console.log(cat); // const => reference error: cat must be initialized before accessing
 const cat = "Tom";
 
