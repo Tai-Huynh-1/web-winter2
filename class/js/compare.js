@@ -19,16 +19,39 @@ let arrA = [a]; // memory location arrA = XXX123
 // copy with objects or arrays, then it's copy by reference (memory address of the array)
 let arrB = arrA; // memory location arrB = arrA = XXX123 (arrB is the same array as arrA) - we are not creating a new array
 let arrC = [a]; // arrC is NOT a copy, but rather a new/separate array with different memory address arrC = 789ANZ
-console.log("arrA", arrA); // [5]
-console.log("arrB", arrB); // [5]
-console.log("arrC", arrC); // [5]
-console.log("arrA === arrC", arrA === arrC); // [5] === [5] => false; comparing identity or the memory address of the 2 arrays
-console.log("arrA === arrB", arrA === arrB); // [5] === [5] => true; comparing identity, and they have same memory address
 
-arrB.push(100);
-console.log("arrA === arrB after pushing 100", arrA === arrB); // [5, 100] === [5, 100] => true
+// console.log("arrA", arrA); // [5]
+// console.log("arrB", arrB); // [5]
+// console.log("arrC", arrC); // [5]
+// console.log("arrA === arrC", arrA === arrC); // [5] === [5] => false; comparing identity or the memory address of the 2 arrays
+// console.log("arrA === arrB", arrA === arrB); // [5] === [5] => true; comparing identity, and they have same memory address
+// ABC123 === ABC123
+// 910 Waverly Ave. Ca 95888 === 910 Waverly Ave. Ca 95888
 
-// arrA.push(100); // add 100 to arrA
-// console.log(arrA); // [5, 100]
-// console.log(arrB); // [5], [5, 100] ==> come back to this
-// console.log(arrC); // [5]
+// arrB.push(100);
+// console.log("arrA === arrB after pushing 100", arrA === arrB); // [5, 100] === [5, 100] => true
+// arrA.push(500);
+// console.log("arrA === arrB after pushing 500", arrA === arrB); // [5, 100, 500] === [5, 100, 500] => true
+
+// cache or caching (RAM) (fast, less space) vs persistent memory (slow, bigger space)
+// cache invalidation & stale data
+
+// arrays: [], can contain all sorts of data inside of it: [true, false, 100, 'string', [], {}, [[[]]], null]
+// arrays are sensitive to their order (index)
+const arrZ = [1, 2, 2, 2, 2, 3, 4, 5, 5, 10, 100, 100];
+// READ on array
+// console.log(arrZ[5]);
+
+// WRITE to array
+// arrZ[12] = true;
+// console.log(arrZ);
+
+// UPDATE to array
+// arrZ[0] = "string";
+// console.log(arrZ);
+
+// DELETE
+// arrZ.pop();
+// console.log(arrZ);
+
+// cover other array methods
