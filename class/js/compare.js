@@ -39,6 +39,8 @@ let arrC = [a]; // arrC is NOT a copy, but rather a new/separate array with diff
 // arrays: [], can contain all sorts of data inside of it: [true, false, 100, 'string', [], {}, [[[]]], null]
 // arrays are sensitive to their order (index)
 const arrZ = [1, 2, 2, 2, 2, 3, 4, 5, 5, 10, 100, 100];
+// arrZ = "sdfsd" // PROBLEM - reassignment of arrZ
+
 // READ on array
 // console.log(arrZ[5]);
 
@@ -51,7 +53,63 @@ const arrZ = [1, 2, 2, 2, 2, 3, 4, 5, 5, 10, 100, 100];
 // console.log(arrZ);
 
 // DELETE
-// arrZ.pop();
-// console.log(arrZ);
+// const poppedItem = arrZ.pop();
+// // console.log(arrZ);
+// console.log("popped", poppedItem);
 
 // cover other array methods
+// OTHER UPDATES
+// arrZ.push(600, 5000); // adds to the end of the array
+// console.log(arrZ);
+
+// ADD TO BEGINNING
+// arrZ.unshift(100);
+// console.log(arrZ);
+// arrZ.shift();
+// console.log(arrZ);
+
+// console.log(7 + 5);
+// console.log(7 - 5);
+// console.log(7 * 5);
+// console.log(7 / 5);
+// console.log(7 % 7); // returns the remainder of a division
+
+// let z = 0;
+// z += 15; // => z = z + 15 (indicate how much to increment by)
+// z++; // => z + 1
+// z -= -1; // => z = z - (-1)
+// console.log(z);
+// z -= 50;
+// z--;
+// console.log(z);
+
+// floats (decimals)
+// console.log(7.5 * 6.6);
+
+// strings
+const name1 = "Tai";
+// console.log("Hello world, my name is " + name1); // string concatenation (adding strings to build longer strings)
+const num = 3;
+let myStr = "I have " + num + " dog"; // "I have 3 dog"
+// console.log(myStr.length); // String.length is a property, NOT a method, therefore no need to invoke it
+// console.log(myStr[0]); // I
+// console.log(myStr[myStr.length - 2]); // o
+// console.log(myStr.split(" "));
+// console.log(myStr.split("").concat([" ", "H"]).join(""));
+
+// string immutibility
+// myStr[7] = 5;
+// console.log(myStr);
+
+function add(a, b) {
+	return a + b;
+}
+
+console.log(add(10, 5));
+
+function greet(name) {
+	console.log("Hello world! My name is " + name);
+}
+
+// call / invoke a function - we use ()
+greet("Jack");
