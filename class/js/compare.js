@@ -101,15 +101,74 @@ let myStr = "I have " + num + " dog"; // "I have 3 dog"
 // myStr[7] = 5;
 // console.log(myStr);
 
-function add(a, b) {
-	return a + b;
+// function add(a, b) {
+// 	return a + b;
+// }
+
+// console.log(add(10, 5));
+
+// function greet(name) {
+// 	console.log("Hello world! My name is " + name);
+// }
+
+// // call / invoke a function - we use ()
+// greet("Jack");
+
+// ARRAYS AGAIN
+const arrD = [5, true, false, {}, [100, 500, "a"], ["a", [550, 888]]];
+// const luckyNumber = arrD[5][1][1];
+// console.log(luckyNumber);
+// arrD[5][1][1] = 777;
+// console.log(arrD);
+
+// BOOLEANS: true & false
+// console.log(Boolean(1)); // true
+// console.log(Boolean(100)); // true
+// console.log(Boolean(-5)); // true
+
+// console.log(Boolean(0)); // false
+// console.log(Boolean("")); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(undefined)); // false
+
+// console.log(Boolean(" ")); // true
+
+// logic gates: if else statements
+// const val = "";
+
+// if (val) {
+// 	console.log("val is valid");
+// } else if (val === "") {
+// 	console.log("val is an empty string");
+// } else if (Boolean(val) === false) {
+// 	console.log("val is also valid");
+// } else {
+// 	console.log("val is invalid");
+// }
+// // ===================
+// if (val === "") {
+// 	console.log("val is an empty string");
+// }
+
+// if (Boolean(val) === false) {
+// 	console.log("val is also valid");
+// }
+
+// const numA = 50;
+// // console.log(numA > 50 && numA === 50); // && is the "and" operatorm which needs both sides to be true
+
+// if (numA > 50 || numA === 50) {
+// 	// || is the "or" operator, which needs one side to be true
+// 	console.log("valid");
+// }
+
+// classic "for loop"
+for (let index = 0; index < arrD.length; index++) {
+	const element = arrD[index];
+	console.log(element);
 }
 
-console.log(add(10, 5));
-
-function greet(name) {
-	console.log("Hello world! My name is " + name);
-}
-
-// call / invoke a function - we use ()
-greet("Jack");
+// Array.forEach method (also used for looping)
+// arrD.forEach((element) => {
+// 	console.log(element);
+// });
