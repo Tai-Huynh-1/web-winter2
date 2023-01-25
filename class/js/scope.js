@@ -60,35 +60,72 @@ const user = {
 	one: true,
 };
 
-// Read (access) data from object use dot notation (preferred way)
-console.log(user.address.shipping);
-// we can also use bracket notation to read from objects if keys are "strings"
-// console.log(user["address"].shipping);
-// console.log(user["address"]["shipping"]);
-console.log(user.isVerified);
+// // Read (access) data from object use dot notation (preferred way)
+// console.log(user.address.shipping);
+// // we can also use bracket notation to read from objects if keys are "strings"
+// // console.log(user["address"].shipping);
+// // console.log(user["address"]["shipping"]);
+// console.log(user.isVerified);
 
-// update data
-user.isVerified = false; // reassigning to a different value
-console.log(user.isVerified);
+// // update data
+// user.isVerified = false; // reassigning to a different value
+// console.log(user.isVerified);
 
-// lets say we mistype a key value that does not exist on the object and make an assignment
-// it will create a brand new key or property on that object if key does not already exist on the object
-user.isVerify = true;
-console.log(user);
+// // lets say we mistype a key value that does not exist on the object and make an assignment
+// // it will create a brand new key or property on that object if key does not already exist on the object
+// user.isVerify = true;
+// console.log(user);
 
-// to delete a key on the object, use the "delete" keyword
-delete user.isVerify;
-console.log(user);
+// // to delete a key on the object, use the "delete" keyword
+// delete user.isVerify;
+// console.log(user);
 
 // switch statement
-const month = "nov";
-switch (month) {
-	case "jan":
-		console.log("the month is january");
-		break;
-	case "dec":
-		console.log("the month is december");
-		break;
-	default:
-		console.log("not a valid month");
+// const month = "nov";
+// switch (month) {
+// 	case "jan":
+// 		console.log("the month is january");
+// 		break;
+// 	case "dec":
+// 		console.log("the month is december");
+// 		break;
+// 	default:
+// 		console.log("not a valid month");
+// }
+
+// SHALLOW vs DEEP ClONE ====================
+// const arrH = [[1, 2, 3], { name: "Jack" }, true];
+// const copyA = arrH; // copy by reference
+
+// const copy = [...arrH]; // spread operator performs a shallow copy/clone (the content) (copy by reference for objects)
+// // const copy = arrH.map((el) => el); // .map also creates a shallow copy/clone
+// // const copy = arrH.slice(); // .slice also creates a shallow copy/clone
+// // const copy = JSON.parse(JSON.stringify(arrH)); // (CHEAT) creating a deep clone (DO NOT USE, it can result in data loss)
+// // copy.push([]);
+// copy[0] = [...arrH[0]];
+// copy[0][0] = 100;
+// // copy[1].name = "Anna";
+// // copy[2] = false;
+
+// console.log("arrH", arrH);
+// console.log("copy", copy);
+
+// ARRAY.reduce =======
+
+const array1 = [1, 2, 3, 4, 5, 6]; // return 21
+function sumArray(array) {
+	// let sum = 0;
+	// array.forEach((el) => (sum = sum + el));
+	// return sum;
+	return array.reduce((accum, curr) => accum + curr, 0);
 }
+
+function mockMap(array) {
+	return array.reduce((accum, curr) => {
+		accum.push(curr);
+		return accum;
+	}, []);
+}
+
+// console.log(sumArray(array1));
+console.log(mockMap(array1));
