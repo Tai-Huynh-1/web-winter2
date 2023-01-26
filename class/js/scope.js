@@ -128,4 +128,67 @@ function mockMap(array) {
 }
 
 // console.log(sumArray(array1));
-console.log(mockMap(array1));
+// console.log(mockMap(array1));
+
+// console.log(typeof "6" + "7"); // string
+// console.log(parseInt("6")); // 6 - number
+
+// ternary operator
+// const x = 12;
+function print(x) {
+	if (x === 1) {
+		return "x is 1";
+	} else if (x === 0) {
+		return "x is 0";
+	} else if (x === 2) {
+		return "x is 2";
+	} else {
+		return "x is not 1";
+	}
+}
+
+function printB(x) {
+	return x === 1 ? "x is 1" : x === 0 ? "x is 0" : x === 2 ? "x is 2" : "x is not 1";
+}
+
+const printC = (x) => (x === 1 ? "x is 1" : x === 0 ? "x is 0" : x === 2 ? "x is 2" : "x is not 1");
+
+// console.log(print(x));
+// console.log(printB(x));
+// console.log(printC(x));
+
+// closure & higher order function (HOF: takes in a function as input and/or returns a function)
+// a closure (is formed) and it is the accessible variables of a function at the time of its (the function) creation
+function add(a) {
+	function funcB(b) {
+		return a + b;
+	}
+
+	return funcB;
+}
+
+// const add = (a) => (b) => a + b;
+
+const funcB = add(5);
+const funcC = add(7);
+
+console.log(funcB(20)); // 25
+console.log(funcC(20)); // 27
+
+function myFunc() {
+	const x = "hi";
+	console.log(x);
+	return;
+}
+
+myFunc();
+// console.log(x);
+
+function multiByMysteryNumber() {
+	const multiplier = 5; // private variable - closure can also be used to hide variables from the outside environment or execution context
+	return function (x) {
+		return x * multiplier;
+	};
+}
+
+console.log(multiByMysteryNumber()(10));
