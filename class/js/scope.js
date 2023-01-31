@@ -134,7 +134,7 @@ function mockMap(array) {
 // console.log(parseInt("6")); // 6 - number
 
 // ternary operator
-// const x = 12;
+const x = 1;
 function print(x) {
 	if (x === 1) {
 		return "x is 1";
@@ -155,7 +155,7 @@ const printC = (x) => (x === 1 ? "x is 1" : x === 0 ? "x is 0" : x === 2 ? "x is
 
 // console.log(print(x));
 // console.log(printB(x));
-// console.log(printC(x));
+console.log(printC(x));
 
 // closure & higher order function (HOF: takes in a function as input and/or returns a function)
 // a closure (is formed) and it is the accessible variables of a function at the time of its (the function) creation
@@ -172,8 +172,8 @@ function add(a) {
 const funcB = add(5);
 const funcC = add(7);
 
-console.log(funcB(20)); // 25
-console.log(funcC(20)); // 27
+// console.log(funcB(20)); // 25
+// console.log(funcC(20)); // 27
 
 function myFunc() {
 	const x = "hi";
@@ -181,7 +181,7 @@ function myFunc() {
 	return;
 }
 
-myFunc();
+// myFunc();
 // console.log(x);
 
 function multiByMysteryNumber() {
@@ -191,4 +191,4 @@ function multiByMysteryNumber() {
 	};
 }
 
-console.log(multiByMysteryNumber()(10));
+// console.log(multiByMysteryNumber()(10));
