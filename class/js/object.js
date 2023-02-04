@@ -99,9 +99,95 @@ const honda = new Car("Honda", 2000, "white");
 const tesla = new Car("Tesla", 2023, "red");
 
 // console.log("honda", honda.honk("BEEP BEEP"));
-honda.honk("BEEP BEEP");
-tesla.honk("FART FART");
+// honda.honk("BEEP BEEP");
+// tesla.honk("FART FART");
 
 // when we use [], {}, or function keyword, JS is creating them using constructors under the hood
 // const arrB = new Array();
 // const objB = new Object();
+
+// printName
+
+// function printName() {}
+
+// const printName = function () {}
+
+// const printName = () => {}
+
+// const animal = {
+// 	name: "bird",
+// 	// es6 method notation
+// 	// printName() {}
+// 	// anonymous function
+// 	printName: function () {
+// 		console.log(this.name);
+// 	},
+// 	// arrow function
+// 	printNameArrow: () => {
+// 		console.log(this.name);
+// 	},
+// };
+
+// animal.printName(); // bird
+// this.name = "cat";
+// animal.printNameArrow(); // undefined
+
+// function greet() {
+// 	console.log(`Hi my name is ${this.name}`);
+// }
+// const boundGreet = greet.bind(animal);
+// boundGreet();
+
+// "Class" keyword was introduced in ES6 as another way to write constructor functions
+
+class Animal {
+	type;
+	eyes;
+	// made age private (not accessible from outside)
+	#age;
+	constructor(type, eyes, age) {
+		this.type = type;
+		this.eyes = eyes;
+		this.#age = age;
+	}
+
+	// ES6 method notation
+	greet() {
+		console.log(`Hi I am a(n) ${this.type}`);
+	}
+
+	// encapsulation (enclosed) - we made #age private with (#) then use this method to expose it to the outside
+	// getter method
+	getAge() {
+		return this.#age;
+	}
+
+	// encapsulation: update the age to a non-zero value: only exposing the functionality you want to the outside environment
+	/**
+	 * Set a new age.
+	 * @param {*} newAge - The new age to update to.
+	 * @returns Nothing
+	 */
+	setAge(newAge) {
+		if (newAge === 0) return;
+		this.#age = newAge;
+	}
+
+	// encapsulation: resetting age
+	/**
+	 * Resets the age to 1.
+	 */
+	resetAge() {
+		this.#age = 1;
+	}
+}
+
+const ox = new Animal("ox", 2, 20);
+
+console.log(ox.getAge());
+ox.setAge(0);
+console.log(ox.getAge());
+ox.resetAge();
+
+// classes, constructors in classes, encapsulation, getter / setter methods & private variables
+// continue with inheritance & prototype & super class
