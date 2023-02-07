@@ -190,4 +190,96 @@ console.log(ox.getAge());
 ox.resetAge();
 
 // classes, constructors in classes, encapsulation, getter / setter methods & private variables
+
 // continue with inheritance & prototype & super class
+
+class Cat extends Animal {
+	#name;
+	#color;
+	#catSpecies;
+	constructor(name, color, catSpecies, eyes, age) {
+		super("feline", eyes, age);
+		this.#name = name;
+		this.#color = color;
+		this.#catSpecies = catSpecies;
+	}
+
+	// greet method already exist on Animal class
+	// /**
+	//  * This method overrides the greet method on the Animal class. (Polymorphism)
+	//  */
+	// greet() {
+	// 	console.log(`Meow, Hi my name is ${this.#name} and I am a ${this.type}!`);
+	// }
+
+	// new Cat method
+	scratch() {
+		console.log("Scratch scratch");
+	}
+
+	// new getters / setter methods for Cat class
+	getColor() {
+		return this.#color;
+	}
+
+	getSpecies() {
+		return this.#catSpecies;
+	}
+}
+
+const tom = new Cat("Tom", "orange", "house cat", 2, 1);
+
+// tom.greet();
+
+// create a Dog class that inherits from Animal.
+// Dog properties are private and includes: name, color, breed
+// Dog methods: greet(), getName(), setName(), getColor, getBreed
+// create an instance of dog called "spot"
+
+class Dog extends Animal {
+	#name;
+	#color;
+	#breed;
+	constructor(name, color, breed, eyes, age) {
+		super("dog", eyes, age);
+		this.#name = name;
+		this.#color = color;
+		this.#breed = breed;
+	}
+
+	// static method allows a class method to be called without instantiating the class
+	/**
+	 * A static method for checking if an object is an instance of the Dog class
+	 * @param {*} object To check
+	 * @returns A boolean. True if object is an instance of Dog.
+	 */
+	static isDog(object) {
+		return object instanceof Dog;
+	}
+
+	greet() {
+		console.log("Ruff ruff");
+	}
+
+	getName() {
+		return this.#name;
+	}
+
+	setName(newName) {
+		this.#name = newName;
+	}
+
+	getColor() {
+		return this.#color;
+	}
+
+	getBreed() {
+		return this.#breed;
+	}
+}
+
+const spot = new Dog("spot", "brown", "golden retriever", 2, 10);
+
+console.log("tom", Dog.isDog(tom));
+
+spot.greet();
