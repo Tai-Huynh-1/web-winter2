@@ -240,6 +240,8 @@ class Dog extends Animal {
 	#name;
 	#color;
 	#breed;
+	static ownerName = "Farmer Jake";
+
 	constructor(name, color, breed, eyes, age) {
 		super("dog", eyes, age);
 		this.#name = name;
@@ -280,6 +282,84 @@ class Dog extends Animal {
 
 const spot = new Dog("spot", "brown", "golden retriever", 2, 10);
 
-console.log("tom", Dog.isDog(tom));
+// console.log("tom", Dog.isDog(tom));
 
-spot.greet();
+// console.log(Dog.ownerName);
+
+// spot.greet();
+
+function Building(roofType, age) {
+	this.roofType = roofType;
+	this.age = age;
+}
+
+Building.prototype.getAge = function () {
+	return this.age;
+};
+
+const gym = new Building("flat", 1);
+const house = new Building("gable", 20);
+
+// console.log(gym.getAge());
+// console.log(house.getAge());
+
+// ES6
+// Immediately Invoked Function Expression (IIFE) (rarely)
+// (function (name) {
+// 	console.log(`I'm an IIFE created by ${name}`);
+// })("Linus");
+
+// Default Parameters for functions
+// function multiply(a = 1, b = 1) {
+// 	return a * b;
+// }
+// console.log(multiply(50));
+
+// Rest parameters for passing in an unspecified amount of arguments
+// Your function packages the arguments into an "args" array to be used
+// function restParams(...args) {
+// 	console.log(args.reduce((accum, curr) => accum + curr, 0));
+// }
+// restParams(1, 4, 5, 8, 9, 7, 6, 3, 4, 5, 4, 8);
+
+// Spread operator (shallow copy, it copies by reference for objects / arrays/ functions)
+const arrY = [100, 800];
+const arrZ = [1, 2, [44, 55]];
+// const arrU = [...arrY, arrZ]; // [100, 800, [1, 2, [44, 55]]]
+const arrU = [...arrY, ...arrZ]; // [100, 800, 1, 2, [44, 55]]
+// arrU[2] = 10000;
+// console.log(arrU); // [100, 800, 10000, ]
+// console.log(arrZ); // [1, 2, [44, 55]]
+
+// Object / Array Destructuring
+const name = "Anna";
+
+const jake = {
+	name: "Jake",
+	email: "jake@sf.com",
+	address: {
+		mailing: "Wall St",
+		shipping: "Main St",
+	},
+};
+
+// destructuring an object & reassigning its name
+// const { name: jakeName, email, address: addressRenamed } = jake; // rename address object
+const {
+	name: jakeName,
+	email,
+	address: { mailing, shipping },
+} = jake; // rename address object
+
+console.log(mailing);
+console.log(shipping);
+
+// console.log(name);
+// console.log(email);
+
+// // array
+// const groceries = ["grapes", "milk"];
+// // const [grapes, milk] = groceries; // destructuring arrays
+// const grapes = groceries[0];
+// const milk = groceries[1];
+// console.log(whatevervariable);
